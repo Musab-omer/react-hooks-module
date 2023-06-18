@@ -7,9 +7,12 @@ import reportWebVitals from './reportWebVitals';
 /* 
     bootstrap configuration 
 */
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/js/dist/collapse';
 import 'font-awesome/css/font-awesome.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdb-ui-kit/css/mdb.min.css'
+import 'bootstrap/js/dist/collapse';
+
+
 
 
 
