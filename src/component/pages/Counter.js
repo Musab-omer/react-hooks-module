@@ -21,7 +21,7 @@ let Counter = () => {
                             <div className="card-body">
                                 <p className="h2">{counter}</p>
 
-                                <button className="btn btn-success" onClick={counterInq}>Increment</button>
+                                <button className="btn btn-success m-1" onClick={counterInq}>Increment</button>
                                 <button className="btn btn-warning m-1" onClick={() => { setCounter(counter + 1) }}>Increment</button>
                             </div>
                         </div>
