@@ -5,11 +5,11 @@ let MainNavbar = () => {
         <React.Fragment>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
-                    <a href="/" className="navbar-brand">React Hooks</a>
+                    <a href="/" className="navbar-brand">React Hooks Form Bindiang</a>
                     <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#main-nav">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="main-nav">
+                    {/* <div className="collapse navbar-collapse" id="main-nav">
                         <ul className="nav nav-underline">
                             <li className="nav-item">
                                 <a href="" className="nav-link text-white">Home</a>
@@ -21,7 +21,7 @@ let MainNavbar = () => {
                                 <a href="" className="nav-link text-white">Contact</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </nav>
         </React.Fragment>
