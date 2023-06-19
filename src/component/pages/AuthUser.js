@@ -1,55 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 
-class AuthUser extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            isLoggedIn: false
-        }
+let AuthUser = () => {
+    let [isLoggedIn, setIsLoggedIn] = useState(false);
+    let logIn = () => {
+        setIsLoggedIn(true);
     }
-
-    logIn = () => {
-        this.setState(
-            {
-                isLoggedIn: true
-            }
-        );
+    let logOut = () => {
+        setIsLoggedIn(false)
     }
+    return (
+        <React.Fragment>
+            <div className="container mt-3">
+                <div className="row">
+                    <div className="col">
+                        <div className="card">
+                            <div className="card-body">
 
-    logOut = () => {
-        this.setState({
-            isLoggedIn: false
-        });
-    }
-    render() {
-        return (
-            <React.Fragment>
-                <div className="container mt-3">
-                    <div className="row">
-                        <div className="col">
-                            <div className="card">
-                                <div className="card-body">
+                                {
+                                    isLoggedIn ?
+                                        <button className="btn btn-warning" onClick={logOut}>LogOut</button> :
+                                        <button className="btn btn-success" onClick={logIn}>LogIn</button>
+                                }
 
-                                    {
-                                        this.state.isLoggedIn ?
-                                            <button className="btn btn-warning" onClick={this.logOut}>LogOut</button> :
-                                            <button className="btn btn-success" onClick={this.logIn}>LogIn</button>
-                                    }
-
-                                    {
-                                        this.state.isLoggedIn ?
-                                            <p className="h3">Hello! Welcome User</p>
-                                            :
-                                            <p className="h3">Welcome Guest </p>
-                                    }
-                                </div>
+                                {
+                                    isLoggedIn ?
+                                        <p className="h3">Hello! Welcome User</p>
+                                        :
+                                        <p className="h3">Welcome Guest </p>
+                                }
                             </div>
                         </div>
                     </div>
                 </div>
-            </React.Fragment>
-        );
-    }
+            </div>
+        </React.Fragment>
+    );
 }
 export default AuthUser;
