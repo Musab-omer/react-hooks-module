@@ -1,40 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { customerData } from "../../DataSource/customerStore";
 
-class Customers extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            customers: customerData
-        }
-    }
-
-    render() {
-        let { customer } = this.state.customers[0];
-        return (
-            <React.Fragment>
+let Customers =()=>{
+    let [Customers,setCustomers]=useState(customerData);
+    return(
+        <React.Fragment>
                 <div className="container mt-3">
                     <div className="row">
                         <div className="col">
                             <table className="table table-hover table-striped table-responsive-md table-primary">
-                                <thead className="thead-dark text-uppercase text-center">
+                                <thead className="table-dark fw-bolder text-uppercase text-center">
                                     <tr>
-                                        <th>#</th>
-                                        <th>picture</th>
-                                        <th>Name</th>
-                                        <th>gender</th>
-                                        <th>city</th>
-                                        <th>email</th>
-                                        <th>age</th>
-                                        <th>phone</th>
+                                        <th scope="col">#</th>
+                                        <th scope="col">picture</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">gender</th>
+                                        <th scope="col">city</th>
+                                        <th scope="col">email</th>
+                                        <th scope="col">age</th>
+                                        <th scope="col">phone</th>
                                     </tr>
                                 </thead>
                                 <tbody className="text-center">
                                     {
-                                        this.state.customers.map(customer => {
+                                        Customers.map(customer => {
                                             return (
-                                                <tr>
-                                                    <td>{customer.login.uuid.substring(customer.login.uuid.length-4)}</td>
+                                                <tr key={customer.login.uuid}>
+                                                    <th scope="row">{customer.login.uuid.substring(customer.login.uuid.length-4)}</th>
                                                     <td><img src={customer.picture.large} width="50px" height="40px" alt="" /></td>
                                                     <td>{customer.name.first}</td>
                                                     <td>{customer.gender}</td>
@@ -52,7 +44,6 @@ class Customers extends React.Component {
                     </div>
                 </div>
             </React.Fragment>
-        );
-    }
+    )
 }
 export default Customers;
