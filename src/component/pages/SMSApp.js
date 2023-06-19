@@ -4,12 +4,12 @@ import React, { useState } from "react";
 import { Component, Fragment } from "react";
 
 let SMSApp = () => {
-    let [maxCount,setMaxCount]=useState(100);
-    let [charCount,setCharCount]=useState(100);
-    
+    let [maxCount, setMaxCount] = useState(100);
+    let [charCount, setCharCount] = useState(100);
 
-    let messageCounter=(e)=>{
-        setCharCount(maxCount-e.target.value.length>0?maxCount-e.target.value.length:0)
+
+    let messageCounter = (e) => {
+        setCharCount(maxCount - e.target.value.length > 0 ? maxCount - e.target.value.length : 0)
     }
     return (
         <Fragment>

@@ -2,32 +2,16 @@
 import React, { useState } from "react";
 
 let MessageCard=()=> {
-    let [messageCard, setMessageCard]=useState({
-        name:'',
-        message:''
-    })
-
-/*    let updateName = (event) => {
-        setMessageCard({
-            ...messageCard,
-            name:event.target.value
-        })
-    }
-   let updateMessage = (event) => {
-
-       setMessageCard({
-        ...messageCard,
-        message:event.target.value
-       })
-    } */
-
-//short way 
+    let [name,setName]=useState('');
+    let [message,setMessage]=useState('');
     let updateInput=e=>{
-        //alert(e.target.name)
-        setMessageCard({
-            ...messageCard,
-           [ e.target.name]:e.target.value
-        })
+        switch(e.target.name){
+           case "name":
+            setName(e.target.value);
+            break;
+            case "message":
+                setMessage(e.target.value);
+        }
     }
    
         return (
@@ -44,17 +28,17 @@ let MessageCard=()=> {
                                         <div className="mb-3">
                                             <input type="text" className="form-control" placeholder="Name"
                                             name="name"
-                                            value={messageCard.name}
+                                            value={name}
                                              onChange={updateInput} />
                                         </div>
                                         <div className="mb-3">
                                             <input type="test" className="form-control" placeholder="Message..." 
                                             name="message"
-                                            value={messageCard.message}
+                                            value={message}
                                             onChange={updateInput} />
                                         </div>
-                                        <h3 id="message">Name :{messageCard.name}</h3>
-                                        <h3 id="message">Message :{messageCard.message}</h3>
+                                        <h3 id="message">Name :{name}</h3>
+                                        <h3 id="message">Message :{message}</h3>
                                     </form>
                                 </div>
                             </div>
