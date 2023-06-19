@@ -3,12 +3,6 @@ import React, { useState } from "react";
 
 let AuthUser = () => {
     let [isLoggedIn, setIsLoggedIn] = useState(false);
-    let logIn = () => {
-        setIsLoggedIn(true);
-    }
-    let logOut = () => {
-        setIsLoggedIn(false)
-    }
     return (
         <React.Fragment>
             <div className="container mt-3">
@@ -19,8 +13,8 @@ let AuthUser = () => {
 
                                 {
                                     isLoggedIn ?
-                                        <button className="btn btn-warning" onClick={logOut}>LogOut</button> :
-                                        <button className="btn btn-success" onClick={logIn}>LogIn</button>
+                                        <button className="btn btn-warning" onClick={()=>setIsLoggedIn(false)}>LogOut</button> :
+                                        <button className="btn btn-success" onClick={()=>setIsLoggedIn(true)}>LogIn</button>
                                 }
 
                                 {
