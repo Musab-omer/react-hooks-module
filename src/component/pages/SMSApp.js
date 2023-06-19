@@ -4,17 +4,12 @@ import React, { useState } from "react";
 import { Component, Fragment } from "react";
 
 let SMSApp = () => {
-    let [Characters, setCharacters] = useState({
-        maxCount: 100,
-        charCount: 100
-    })
+    let [maxCount,setMaxCount]=useState(100);
+    let [charCount,setCharCount]=useState(100);
+    
 
     let messageCounter=(e)=>{
-        //alert()
-        setCharacters({
-            ...Characters,
-            charCount:100-e.target.value.length>0?100-e.target.value.length:0
-        })
+        setCharCount(maxCount-e.target.value.length>0?maxCount-e.target.value.length:0)
     }
     return (
         <Fragment>
@@ -28,7 +23,7 @@ let SMSApp = () => {
                             <div className="card-body bg-light">
                                 <form>
                                     <div className="mb-3">
-                                        <textarea rows="5" cols="50" maxLength={Characters.maxCount}
+                                        <textarea rows="5" cols="50" maxLength={maxCount}
                                             onChange={messageCounter}
                                             className="form-control form-control-lg"
                                         />
@@ -36,7 +31,7 @@ let SMSApp = () => {
                                 </form>
                             </div>
                             <div className="card-footer bg-info text-white">
-                                <p className="h5">The remaining Characters : {Characters.charCount}</p>
+                                <p className="h5">The remaining Characters : {charCount}</p>
                             </div>
                         </div>
                     </div>
