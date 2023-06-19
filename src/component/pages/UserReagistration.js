@@ -39,7 +39,7 @@ let UserRegistration = () => {
                 {/* <pre>{JSON.stringify(User)}</pre> */}
                 <div className="row">
                     <div className="col-md-4">
-                        <div className="card">
+                        <div className="card shadow-lg">
                             <div className="card-header bg-primary text-white">
                                 <p className="h4">Register Form</p>
                             </div>
@@ -58,7 +58,7 @@ let UserRegistration = () => {
                                             value={User.email}
                                             onChange={updateInput}
                                             placeholder="Email" />
-                                            <div id="emailHelp" className="form-text">We'll never share you email with anyone else.</div>
+                                            <div id="emailHelp" className="form-text text-white">We'll never share you email with anyone else.</div>
                                     </div>
                                     <div className="mb-3">
                                         <input type="password" className="form-control"
@@ -66,7 +66,7 @@ let UserRegistration = () => {
                                             value={User.password}
                                             onChange={updateInput}
                                             placeholder="Password" />
-                                            <div id="paswordHelBlock" className="form-text">
+                                            <div id="paswordHelBlock" className="form-text text-white">
                                                 Your Password must be 8-20 characters long, contain letters and numbers, and must not contain 
                                                 spaces, special characters, or emoji.
                                             </div>
@@ -79,7 +79,7 @@ let UserRegistration = () => {
                                             placeholder="Confirm Password" />
                                     </div>
                                     <div className="mb-3">
-                                        <select className="form-control"
+                                        <select className="form-select"
                                             name="designation"
                                             value={User.designation}
                                             onChange={updateInput}>
