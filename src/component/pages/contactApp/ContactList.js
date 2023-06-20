@@ -1,40 +1,31 @@
-
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import {customerData} from '../../../DataSource/customerStore'
 
-class ContactList extends Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            customers:customerData
-        }
-    }
-
-    sendData =(data)=>{
-        this.props.getCustomer(data);
-    }
-    
-    render() {
-        return (
-            <React.Fragment>
-                <table className='table table-hover table-striped table-warning'>
-                    <thead className='thead-dark'>
+let ContactList =(props)=>{
+    let [Customers,setCustomers]=useState(customerData)
+   let sendData=(data)=>{
+    props.getCustomer(data);
+   }
+    return(
+        <React.Fragment>
+                <table className='table table-hover table-striped table-warning table-sm text-center'>
+                    <thead className='table-dark fw-bolder'>
                         <tr>
-                            <th>#</th>
-                            <th>picture</th>
-                            <th>Name</th>
-                            <th>gender</th>
-                            <th>city</th>
-                            <th>email</th>
-                            <th>age</th>
-                            <th>phone</th>
+                            <th scope="col">#</th>
+                            <th scope="col">picture</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">gender</th>
+                            <th scope="col">city</th>
+                            <th scope="col">email</th>
+                            <th scope="col">age</th>
+                            <th scope="col">phone</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            this.state.customers.map(customer => {
+                            Customers.map(customer => {
                                 return(
-                                    <tr onClick={this.sendData.bind(this,customer)}>
+                                    <tr key={customer.login.uuid} onClick={sendData.bind(this,customer)}>
                                         <td>{customer.login.uuid.substring(customer.login.uuid.length-4)}</td>
                                         <td><img src={customer.picture.medium} height="30px" alt=""/></td>
                                         <td>{customer.name.first}</td>
@@ -50,7 +41,7 @@ class ContactList extends Component {
                     </tbody>
                 </table>
             </React.Fragment>
-        )
-    }
+
+    )
 }
-export default ContactList;
+export default ContactList
