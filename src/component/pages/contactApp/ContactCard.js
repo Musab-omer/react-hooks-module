@@ -3,30 +3,25 @@ import React, { Component } from 'react'
 
 import img from '../../../assets/imgs/Healthy2.jpeg'
 
-class ContactCard extends Component {
-    constructor(props) {
-        super(props);
 
-    }
-    render() {
-        //alert(JSON.stringify(this.props.customerData))
-        return (
-            <React.Fragment>
+let ContactCard =(props)=>{
+    return(
+        <React.Fragment>
                 <div className='container'>
                     <div className='row'>
                         <div className='col'>
-                            <div className='card'>
+                            <div className='card shadow'>
                                 <div className='cardd-header bg-secondary text-center'>
-                                    <img src={this.props.customerData.picture.medium} className='img-fluid' style={{ border: "5px solid purple", borderRadius: "50%", width: "150px", height: "150px", marginBottom: "-50px" }} alt='' />
+                                    <img src={props.customerData.picture.medium} className='img-fluid' style={{ border: "5px solid purple", borderRadius: "50%", width: "150px", height: "150px", marginBottom: "-50px" }} alt='' />
                                 </div>
                                 <div className='card-body mt-5'>
-                                    <ul className='list-group bg-light'>
-                                        <li className='list-group-item'>Name : {this.props.customerData.name.first} {this.props.customerData.name.last}</li>
-                                        <li className='list-group-item'>Gender : {this.props.customerData.gender}</li>
-                                        <li className='list-group-item'>City : {this.props.customerData.location.city}</li>
-                                        <li className='list-group-item'>Email : {this.props.customerData.email}</li>
-                                        <li className='list-group-item'>Age : {this.props.customerData.dob.age}</li>
-                                        <li className='list-group-item'>Phone : {this.props.customerData.phone}</li>
+                                    <ul className='list-group list-group-flush'>
+                                        <li className='list-group-item list-group-item-warning'>Name : {props.customerData.name.first} {props.customerData.name.last}</li>
+                                        <li className='list-group-item list-group-item-warning'>Gender : {props.customerData.gender}</li>
+                                        <li className='list-group-item list-group-item-warning'>City : {props.customerData.location.city}</li>
+                                        <li className='list-group-item list-group-item-warning'>Email : {props.customerData.email}</li>
+                                        <li className='list-group-item list-group-item-warning'>Age : {props.customerData.dob.age}</li>
+                                        <li className='list-group-item list-group-item-warning'>Phone : {props.customerData.phone}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -34,7 +29,7 @@ class ContactCard extends Component {
                     </div>
                 </div>
             </React.Fragment>
-        )
-    }
+
+    )
 }
-export default ContactCard;
+export default ContactCard
