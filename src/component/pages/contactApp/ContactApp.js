@@ -1,26 +1,16 @@
 
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import ContactList from './ContactList';
 import ContactCard from './ContactCard';
 
-
-class ContactApp extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            customer: null
-        }
+let ContactApp =()=>{
+    let [Customer,setCustomer]=useState(null)
+    let getCustomer=(data)=>{
+        setCustomer(data);
     }
 
-    getCustomer = (data) => {
-        this.setState({
-            customer: data
-        });
-    }
-    render() {
-        //alert(this.state.customer)
-        return (
-            <React.Fragment>
+    return(
+        <React.Fragment>
                 <div className='container mt-3'>
                     <div className='row'>
                         <div className='col'>
@@ -30,12 +20,12 @@ class ContactApp extends Component {
                     </div>
                     <div className='row'>
                         <div className='col-md-8'>
-                            <ContactList getCustomer={this.getCustomer} />
+                            <ContactList getCustomer={getCustomer} />
                         </div>
                         <div className='col-md-4'>
                             {
-                                this.state.customer !== null ?
-                                    <ContactCard customerData={this.state.customer} />
+                                Customer !== null ?
+                                    <ContactCard customerData={Customer} />
                                     :
                                     null
                             }
@@ -43,7 +33,7 @@ class ContactApp extends Component {
                     </div>
                 </div>
             </React.Fragment>
-        )
-    }
+        
+    )
 }
-export default ContactApp;
+export default ContactApp
