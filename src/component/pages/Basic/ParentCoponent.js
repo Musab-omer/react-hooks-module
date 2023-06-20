@@ -1,24 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import ChildCoponent from "./ChildComponent";
 
-class ParentCoponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            parentMessage: 'Hello I am From PARENT',
-            wishingMessage: ''
-        }
-    }
-
-    childData = (data) => {
-        this.setState({
-            ...this.state,
-            wishingMessage: data
+let ParentCoponent=()=>{
+    let[Parent,setParent]=useState({
+        parentMessage: 'Hello I am From PARENT',
+        wishingMessage: ''
+    });
+    let childData = (data) => {
+        setParent({
+            ...Parent,
+            wishingMessage:data
         })
     }
-    render() {
-        return (
-            <React.Fragment>
+    return(
+        <React.Fragment>
                 <div className="container mt-3">
                     <div className="row">
                         <div className="col">
@@ -27,8 +22,8 @@ class ParentCoponent extends React.Component {
                                     <p className="h4">ParentCoponent</p>
                                 </div>
                                 <div className="card-body orange">
-                                    <h2>From child :{this.state.wishingMessage}</h2>
-                                    <ChildCoponent message={this.state.parentMessage} resiveData={this.childData} />
+                                    <h2>From child :{Parent.wishingMessage}</h2>
+                                    <ChildCoponent message={Parent.parentMessage} resiveData={childData} />
                                 </div>
                             </div>
                         </div>
@@ -36,7 +31,6 @@ class ParentCoponent extends React.Component {
                 </div>
 
             </React.Fragment>
-        );
-    }
+    )
 }
 export default ParentCoponent;
