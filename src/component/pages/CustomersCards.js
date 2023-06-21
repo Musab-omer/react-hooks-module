@@ -1,32 +1,22 @@
 import axios from 'axios';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-class CustomersCards extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            customers:[],
-            errorMessage:''
-        }
-    }
+let CustomersCards=()=>{
+    let [customers,setCustomer]=useState([])
+    let [error,setError]=useState('');
 
-    componentDidMount = () => {
+    useEffect(()=>{
         let dataUrl="https://gist.githubusercontent.com/Musab-omer/59475f20b0d1fcb3268b3fc4bcab3015/raw/ee38dfe4276eb9c0b16ca02af1402e4862158101/customers.31-05-2023.json";
         axios.get(dataUrl).then((response)=>{
-            this.setState({
-                ...this.state,
-                customers:response.data
-            });
+            // console.log('Featch data from server ')
+           setCustomer(response.data)
         }).catch((error)=>{
-            this.setState({
-                ...this.state,
-                errorMessage:error.message
-            });
+            setError(error.message)
+            console.error(error.message)
         });
-    }
-    render() {
-        return (
-            <React.Fragment>
+    },[])
+    return(
+        <React.Fragment>
                 <div className='container mt-3'>
                     <div className='row'>
                         <div className='col'>
@@ -37,15 +27,14 @@ class CustomersCards extends React.Component {
                         </div>
                     </div>
                     <div className='row text-center'>
-                        {/* <pre>{JSON.stringify(this.state.customers)}</pre> */}
                         <div className='col '>
                             {
-                                this.state.customers.length>0?
+                                customers.length>0?
                                 <React.Fragment>
                                     {
-                                        this.state.customers.map(customer=>{
+                                        customers.map(customer=>{
                                             return(
-                                                <div className='card mt-5 mb-5 ml-3 d-inline-block zoom'>
+                                                <div key={customer.login.uuid} className='card mt-5 mb-5 ml-3 d-inline-block zoom'>
                                                     <div className='card-header text-center bg-warning p-4'>
                                                         <img src={customer.picture.medium} className='img-fluid img-thumbnail rounded-circle' style={{marginTop:"-75px",border:"5px solid darkorange"}} alt=''/>
                                                     </div>
@@ -69,8 +58,6 @@ class CustomersCards extends React.Component {
                     </div>
                 </div>
             </React.Fragment>
-        );
-    }
-
+    )
 }
 export default CustomersCards
