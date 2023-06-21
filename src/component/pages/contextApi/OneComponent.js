@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import TowComponent from './TowComponent';
 
- class OneComponent extends Component {
-  render() {
-    return (
+let OneComponent=()=>{
+    return(
         <React.Fragment>
         <div className='container'>
             <div className='row'>
@@ -19,6 +18,5 @@ import TowComponent from './TowComponent';
         </div>
     </React.Fragment>
     )
-  }
 }
-export default OneComponent;
+export default OneComponent

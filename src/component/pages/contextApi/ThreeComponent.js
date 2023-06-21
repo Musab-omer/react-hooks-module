@@ -1,33 +1,24 @@
-import React, { Component } from 'react'
+import React, { Component, useContext } from 'react'
 import Ccomponent from '../propDrilling/Ccomponent'
 import UserContext from './UserContext';
 
-class ThreeComponent extends Component {
-    render() {
-        return (
-            <React.Fragment>
+let ThreeComponent=()=>{
+    let userInfo=useContext(UserContext)
+    return(
+        <React.Fragment>
                 <div className='container'>
                     <div className='row'>
                         <div className='col'>
                             <div className='card'>
                                 <div className='card-body bg-success'>
                                     <p className='h4'> Component Three</p>
-                                    <UserContext.Consumer>
-                                        {
-                                            (value)=>{
-                                                return(
-                                                    <pre>{JSON.stringify(value)}</pre>
-                                                );
-                                            }
-                                        }
-                                    </UserContext.Consumer>
+                                    <pre>{JSON.stringify(userInfo)}</pre>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </React.Fragment>
-        )
-    }
+    )
 }
-export default ThreeComponent;
+export default ThreeComponent
