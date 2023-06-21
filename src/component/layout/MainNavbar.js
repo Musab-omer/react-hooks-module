@@ -5,7 +5,7 @@ let MainNavbar = () => {
         <React.Fragment>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
-                    <a href="/" className="navbar-brand">React Hooks Props , Drilling , Context Api , component Life cycle</a>
+                    <a href="/" className="navbar-brand">React Hooks Axiose Http</a>
                     <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#main-nav">
                         <span className="navbar-toggler-icon"></span>
                     </button>
