@@ -34,6 +34,7 @@ return(
                 <td>Email</td>
                 <td>Phone</td>
                 <td>Location</td>
+                <td>Action</td>
             </tr>
         </thead>
         <tbody>
@@ -43,12 +44,13 @@ return(
                     {
                         customers.map(customer=>{
                             return(
-                                <tr key={customer.login.uuid} onClick={sendData.bind(this,customer.login.uuid)}>
+                                <tr key={customer.login.uuid} >
                                     <td>{customer.login.uuid.substring(customer.login.uuid.length-4)}</td>
                                     <td>{customer.name.first}</td>
                                     <td>{customer.email}</td>
                                     <td>{customer.phone}</td>
                                     <td>{customer.location.country}</td>
+                                    <td><i className="fa fa-eye text-info" onClick={sendData.bind(this,customer.login.uuid)}></i></td>
                                 </tr>
                             )
                         })
