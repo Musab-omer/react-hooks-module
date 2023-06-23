@@ -1,19 +1,13 @@
 import React from "react";
 
-class GithubRepos extends React.Component{
-    constructor(props) {
-        super(props);
-        
-    }
-
-    render() {
-        let {reposDetails}=this.props;
-        return (
-            <React.Fragment>
-                 <pre>{JSON.stringify(this.props.reposDetails)}</pre>
-                 <div className="row">
+let GithubRepos=(props)=>{
+    let {reposDetails}=props;
+    return(
+        <React.Fragment>
+            <div className="container mt-5">
+            <div className="row">
                     <div className="col">
-                        <div className="card">
+                        <div className="card shadow">
                             <div className="card-header bg-secondary text-white">
                                 <p className="h4">Repositories</p>
                             </div>
@@ -27,7 +21,7 @@ class GithubRepos extends React.Component{
                                                     <a href={repo.html_url} target="_blank">{repo.name}</a>
                                                     </span>
                                                     <span className="badge badge-success mx-1">{repo.stargazers_count}Stars</span>
-                                                    <span className="badge badge-info mx-1">{repo.watchers} Watchers</span>
+                                                    <span className="badge badge-danger mx-1">{repo.watchers} Watchers</span>
                                                 </li>
                                             </React.Fragment>
                                         );
@@ -37,9 +31,8 @@ class GithubRepos extends React.Component{
                         </div>
                     </div>
                  </div>
-            </React.Fragment>
-        );
-    }
-    
+            </div>
+        </React.Fragment>
+    )
 }
-export default GithubRepos;
+export default GithubRepos
