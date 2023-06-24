@@ -45,6 +45,12 @@ let GithubSearch = () => {
             <div className="container mt-5">
                 <div className="row">
                     <div className="col">
+                        <p className="h3 text-primary fw-bold">Github Prifile Search</p>
+                        <p>Irure ullamco est enim aliqua nostrud exercitation commodo minim mollit. Commodo adipisicing pariatur elit irure ipsum ipsum culpa amet. Esse elit ad nostrud reprehenderit eiusmod ea.</p>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col">
                         <form className="row">
                             <div className="col-auto">
                                 <input type="text" className="form-control"
@@ -89,6 +95,7 @@ let GithubSearch = () => {
                     </div>
                 </div>
             </div>
+            <div style={{marginBottom:"500px"}}></div>
         </React.Fragment>
     )
 }
