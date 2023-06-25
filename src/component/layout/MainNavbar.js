@@ -6,7 +6,7 @@ let MainNavbar = () => {
         <React.Fragment>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
-                    <a href="/" className="navbar-brand">React Hooks Routing</a>
+                    <Link to="/" className="navbar-brand">React Hooks Routing</Link>
                     <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#main-nav">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -25,7 +25,7 @@ let MainNavbar = () => {
                                 <Link to='/about' className="nav-link text-white">About</Link>
                             </li>
                             <li className="nav-item">
-                                <a href="" className="nav-link text-white">Contact</a>
+                                <Link to='/contact' className="nav-link text-white">Contact</Link>
                             </li>
                         </ul>
                     </div>
