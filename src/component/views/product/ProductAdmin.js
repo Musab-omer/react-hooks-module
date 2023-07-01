@@ -14,7 +14,7 @@ let ProductAdmin = () => {
     }, [])
 
     let getAllProducts = () => {
-        let dataURl = "http://127.0.0.1:3000/api/products";
+        let dataURl = "http://127.0.0.1:5000/api/products";
         Axios.get(dataURl).then((response) => {
             setProducts(response.data)
         }).catch((err) => {
@@ -24,7 +24,7 @@ let ProductAdmin = () => {
 
     //delete a product
     let deleteProduct = (productId) => {
-        let dataUrl = `http://127.0.0.1:3000/api/products/${productId}`;
+        let dataUrl = `http://127.0.0.1:5000/api/products/${productId}`;
         Axios.delete(dataUrl).then((response) => {
             alert("product deleted");
             getAllProducts();

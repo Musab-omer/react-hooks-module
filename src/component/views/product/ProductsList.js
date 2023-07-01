@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import Axios from 'axios'
+import Axios from 'axios';
 
 let ProductsList = () => {
     let [products, setProducts] = useState([]);
@@ -13,7 +13,7 @@ let ProductsList = () => {
 
 
     let getAllProducts = () => {
-        let dataURl = "http://127.0.0.1:3000/api/products";
+        let dataURl = "http://127.0.0.1:5000/api/products";
         Axios.get(dataURl).then((response) => {
             setProducts(response.data);
         }).catch((err) => {

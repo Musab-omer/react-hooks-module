@@ -24,7 +24,7 @@ let UpdateProduct = (props) => {
 
     // get a product
     let getProduct = (productId) => {
-        let dataUrl = `http://127.0.0.1:3000/api/products/${productId}`;
+        let dataUrl = `http://127.0.0.1:5000/api/products/${productId}`;
         Axios.get(dataUrl).then((response) => {
             setProduct(response.data)
         }).catch((error) => {
@@ -75,7 +75,7 @@ let UpdateProduct = (props) => {
     let submitForm = (event) => {
         event.preventDefault();
        
-        let dataUrl = `http://127.0.0.1:3000/api/products/${productId}`;
+        let dataUrl = `http://127.0.0.1:5000/api/products/${productId}`;
         Axios.put(dataUrl, product).then((response) => {
             setIsSubmitted(true)
         }).catch((error) => {
