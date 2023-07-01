@@ -51,7 +51,7 @@ let CreateProduct=()=>{
     let addProduct=(event)=>{
         event.preventDefault();
         //alert(JSON.stringify(this.state.product))
-        let dataURl = "http://127.0.0.1:5000/api/products";
+        let dataURl = "http://127.0.0.1:3000/api/products";
         Axios.post(dataURl,product).then((response) => {
             setIsSubmitted(true)
            
