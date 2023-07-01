@@ -10,7 +10,9 @@ import reportWebVitals from './reportWebVitals';
 import 'font-awesome/css/font-awesome.min.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdb-ui-kit/css/mdb.min.css'
+
 import 'bootstrap/js/dist/collapse';
+import 'bootstrap/js/dist/carousel';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
