@@ -6,12 +6,12 @@ let MainNavbar = () => {
         <React.Fragment>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
-                    <Link to="/" className="navbar-brand">
-                    <i className="bi bi-cart4 mx-1"></i> React Hooks Bigbasket</Link>
+                    <a href="/" className="navbar-brand">
+                    <i className="bi bi-cart4 mx-1"></i> React Hooks useRef() and useReducer()</a>
                     <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#main-nav">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="main-nav">
+                    {/* <div className="collapse navbar-collapse" id="main-nav">
                         <ul className="navbar-nav nav-underline">
                            <li className="nav-item">
                             <Link to="/" className="nav-link">Home</Link>
@@ -25,7 +25,7 @@ let MainNavbar = () => {
                             <Link to="/products/admin" className="nav-link">Admin</Link>
                            </li>
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </nav>
         </React.Fragment>
