@@ -67,7 +67,7 @@ let CreateProduct = () => {
         <React.Fragment>
             {
                 isSubmitted ? <Navigate to='/products/admin' /> :
-                    
+
                     <div className="container mt-3">
                         <div className="row">
                             <div className="col zoom-in">
