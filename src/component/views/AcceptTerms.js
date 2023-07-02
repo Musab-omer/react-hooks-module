@@ -3,7 +3,8 @@ import React, { useRef } from "react";
 let AcceptTerms = () => {
     let btnRegister=useRef(null);
     let termsConetions=(event)=>{
-        event.target.checked ?btnRegister.current.disabled=false:btnRegister.current.disabled=true
+        //event.target.checked ?btnRegister.current.disabled=false:btnRegister.current.disabled=true
+        btnRegister.current.disabled= !event.target.checked
     }
     return (
         <React.Fragment>
