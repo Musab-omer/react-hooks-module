@@ -20,7 +20,7 @@ let UpdateProduct = (props) => {
 
     useEffect(() => {
         getProduct(productId);
-    }, [])
+    }, [productId])
 
     // get a product
     let getProduct = (productId) => {
